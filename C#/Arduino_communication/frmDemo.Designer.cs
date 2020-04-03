@@ -33,15 +33,15 @@
             this.btn_send = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.chk_autoConnect = new System.Windows.Forms.CheckBox();
-            this.cb_comPort = new System.Windows.Forms.ComboBox();
             this.lblArduino = new System.Windows.Forms.Label();
             this.btn_connect = new System.Windows.Forms.Button();
+            this.txt_port = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 76);
+            this.label1.Location = new System.Drawing.Point(55, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 0;
@@ -77,22 +77,13 @@
             this.chk_autoConnect.AutoSize = true;
             this.chk_autoConnect.Checked = true;
             this.chk_autoConnect.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_autoConnect.Location = new System.Drawing.Point(40, 16);
+            this.chk_autoConnect.Location = new System.Drawing.Point(28, 16);
             this.chk_autoConnect.Name = "chk_autoConnect";
-            this.chk_autoConnect.Size = new System.Drawing.Size(90, 17);
+            this.chk_autoConnect.Size = new System.Drawing.Size(100, 17);
             this.chk_autoConnect.TabIndex = 4;
-            this.chk_autoConnect.Text = "Auto connect";
+            this.chk_autoConnect.Text = "Auto select port";
             this.chk_autoConnect.UseVisualStyleBackColor = true;
             this.chk_autoConnect.CheckedChanged += new System.EventHandler(this.chk_autoConnect_CheckedChanged);
-            // 
-            // cb_comPort
-            // 
-            this.cb_comPort.Enabled = false;
-            this.cb_comPort.FormattingEnabled = true;
-            this.cb_comPort.Location = new System.Drawing.Point(137, 14);
-            this.cb_comPort.Name = "cb_comPort";
-            this.cb_comPort.Size = new System.Drawing.Size(225, 21);
-            this.cb_comPort.TabIndex = 5;
             // 
             // lblArduino
             // 
@@ -113,14 +104,22 @@
             this.btn_connect.UseVisualStyleBackColor = true;
             this.btn_connect.Click += new System.EventHandler(this.btn_connect_Click);
             // 
+            // txt_port
+            // 
+            this.txt_port.Enabled = false;
+            this.txt_port.Location = new System.Drawing.Point(137, 16);
+            this.txt_port.Name = "txt_port";
+            this.txt_port.Size = new System.Drawing.Size(225, 20);
+            this.txt_port.TabIndex = 8;
+            // 
             // frmDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 450);
+            this.Controls.Add(this.txt_port);
             this.Controls.Add(this.btn_connect);
             this.Controls.Add(this.lblArduino);
-            this.Controls.Add(this.cb_comPort);
             this.Controls.Add(this.chk_autoConnect);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btn_send);
@@ -142,8 +141,8 @@
         private System.Windows.Forms.Button btn_send;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckBox chk_autoConnect;
-        private System.Windows.Forms.ComboBox cb_comPort;
         private System.Windows.Forms.Label lblArduino;
         private System.Windows.Forms.Button btn_connect;
+        private System.Windows.Forms.TextBox txt_port;
     }
 }

@@ -23,24 +23,7 @@ namespace UI
 
         private void frmDemo_Load(object sender, EventArgs e)
         {
-            m_arduino = new TGMTarduino();
-            m_arduino.onMessageReceived += OnArduinoMessage;
-            m_arduino.onBoardDisconnectedHandler += OnBoardDisconnedted;
-
-            if (m_arduino.Connected)
-            {
-                lblArduino.Text = "Connected to " + m_arduino.ConnectedPort;
-                lblArduino.ForeColor = Color.Green;
-
-                btn_connect.Enabled = false;
-            }
-            else
-            {
-                lblArduino.Text = "Can not connect to board";
-                lblArduino.ForeColor = Color.Red;
-
-               btn_connect.Enabled = true;
-            }
+            InitArduino();
         }
 
         private void btn_send_Click(object sender, EventArgs e)
@@ -59,7 +42,7 @@ namespace UI
 
         private void chk_autoConnect_CheckedChanged(object sender, EventArgs e)
         {
-            cb_comPort.Enabled = !chk_autoConnect.Checked;
+            txt_port.Enabled = !chk_autoConnect.Checked;
         }
 
         void OnArduinoMessage(object sender, ArduinoEventArgs args)
@@ -77,6 +60,12 @@ namespace UI
             if (m_formClosed)
                 return;
 
+            
+            this.btn_connect.Invoke((MethodInvoker)delegate
+            {
+                btn_connect.Enabled = true;
+            });
+
             this.lblArduino.Invoke((MethodInvoker)delegate
             {
                 lblArduino.Text = "Board disconnected";
@@ -86,7 +75,36 @@ namespace UI
 
         private void btn_connect_Click(object sender, EventArgs e)
         {
+            InitArduino();
+        }
 
+        void InitArduino()
+        {
+            string port = "";
+            if(chk_autoConnect.Checked == false)
+            {
+                port = txt_port.Text;
+            }
+            m_arduino = new TGMTarduino(port);
+            m_arduino.onMessageReceived += OnArduinoMessage;
+            m_arduino.onBoardDisconnectedHandler += OnBoardDisconnedted;
+
+            if (m_arduino.Connected)
+            {
+                lblArduino.Text = "Connected to " + m_arduino.ConnectedPort;
+                lblArduino.ForeColor = Color.Green;
+
+                txt_port.Text = m_arduino.ConnectedPort;
+
+                btn_connect.Enabled = false;
+            }
+            else
+            {
+                lblArduino.Text = "Can not connect to board";
+                lblArduino.ForeColor = Color.Red;
+
+                btn_connect.Enabled = true;
+            }
         }
     }
 }
