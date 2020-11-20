@@ -1,4 +1,4 @@
 # Arduino_communication
-Send and receive data between Arduino and PC
+Gửi và nhận dữ liệu đơn giản từ máy tính tới Arduino, viết bằng C#
 
 User guide: https://thigiacmaytinh.com/gui-nhan-du-lieu-toi-arduino/
