@@ -1,0 +1,1 @@
+Copy file DFR_LCD_Keypad.h and DFR_LCD_Keypad.cpp into Arduino\libraries\DFR_LCD_Keypad
