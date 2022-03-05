@@ -3,8 +3,8 @@
 #include <SoftwareSerial.h>      // Include software serial library
 TinyGPSPlus gps;
 // Vcc = 3.3 V
-#define S_RX    2                // Define software serial RX pin
-#define S_TX    3                // Define software serial TX pin
+#define S_RX    4                // Define software serial RX pin
+#define S_TX    5                // Define software serial TX pin
 SoftwareSerial SoftSerial(S_RX, S_TX);    // Configure SoftSerial library
 
 void setup(void) {
