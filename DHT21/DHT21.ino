@@ -15,7 +15,7 @@
  */
 #include "DHT.h"
 
-#define DHTPIN 2     // what digital pin we're connected to
+#define DHTPIN 4     // what digital pin we're connected to
 
 // Chọn loại cảm biến cho phù hợp ---------------------------------------------------------------------------------------
 //#define DHTTYPE DHT11   // DHT 11
@@ -60,12 +60,12 @@ void loop() {
   Serial.print("%   ");
   Serial.print("Temp: ");
   Serial.print(t);
-  Serial.print("*C ");
+  Serial.print("°C ");
   Serial.print(f);
-  Serial.print("*F ");
+  Serial.print("°F ");
   Serial.print("Heat index: ");
   Serial.print(hic);
-  Serial.print("*C ");
+  Serial.print("°C ");
   Serial.print(hif);
-  Serial.println(" *F");
+  Serial.println(" °F");
 }
