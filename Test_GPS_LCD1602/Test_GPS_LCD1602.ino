@@ -20,10 +20,10 @@ void getgps(TinyGPSPlus &gps)
   longitude = gps.location.lng();
   lcd.setCursor(0,0);
   lcd.print("La:");
-  lcd.print(latitude,2);
+  lcd.print(latitude,1);
   lcd.print(" ");
   lcd.print("Lg:");
-  lcd.print(longitude,2);
+  lcd.print(longitude,1);
   
   lcd.print(" ");
 //  ---------- Giờ ------------
