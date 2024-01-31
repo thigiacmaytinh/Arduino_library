@@ -26,7 +26,7 @@ void serialEvent()
     // get the new byte:
     char c = (char)Serial.read();
     
-    if (c == '\n' || c == "#") 
+    if (c == '\n') 
     {
       isStringComplete = true;      
     }
